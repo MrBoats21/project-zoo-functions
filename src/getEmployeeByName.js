@@ -1,7 +1,14 @@
 const data = require('../data/zoo_data');
 
-function getEmployeeByName(employeeName) {
-  // seu código aqui
+const { employees } = data;
+
+function getEmployeeByName(nome) {
+  if (nome === undefined) {
+    return {};
+  }
+  return employees.find((item) => (item.lastName === nome || item.firstName === nome));
 }
+
+console.log(getEmployeeByName('Wilburn'));
 
 module.exports = getEmployeeByName;
