@@ -11,7 +11,6 @@ function getAnimalsOlderThan(animal, age) {
     }
   }
   return true;
-
 }
 
 console.log(getAnimalsOlderThan('penguins', 10));
