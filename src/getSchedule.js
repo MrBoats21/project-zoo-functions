@@ -1,7 +1,12 @@
 const data = require('../data/zoo_data');
 
+const { species } = data;
+
 function getSchedule(scheduleTarget) {
-  // seu código aqui
+  const target = species.find((animal) => animal.name === scheduleTarget);
+  return target.availability;
 }
+
+console.log(getSchedule('lions'));
 
 module.exports = getSchedule;
