@@ -1,8 +1,19 @@
 const data = require('../data/zoo_data');
 
-function getOldestFromFirstSpecies(ident) {
+const { employees } = data;
+const { species } = data;
+
+function getOldestFromFirstSpecies(id) {
+  const { responsibleFor } = employees.find((employee) => (employee.id === id));
+  const { residents } = species.find((specie) => (specie.id === responsibleFor[0]));
+  return Object.values(residents.reduce((acc, curr) => {
+    if (acc.age > curr.age) {
+    //   console.log(curr);
+      return acc;
+    } return curr;
+  }));
 }
 
-console.log(getOldestFromFirstSpecies('56d43ba3-a5a7-40f6-8dd7-cbb05082383f'));
+// console.log(getOldestFromFirstSpecies('0e7b460e-acf4-4e17-bcb3-ee472265db83'));
 
 module.exports = getOldestFromFirstSpecies;
