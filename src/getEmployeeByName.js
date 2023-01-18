@@ -9,6 +9,6 @@ function getEmployeeByName(nome) {
   return employees.find((item) => (item.lastName === nome || item.firstName === nome));
 }
 
-console.log(getEmployeeByName('Wilburn'));
+console.log(getEmployeeByName('Stephanie'));
 
 module.exports = getEmployeeByName;
